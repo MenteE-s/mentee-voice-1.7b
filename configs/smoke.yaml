@@ -1,13 +1,14 @@
-# Smoke test configuration — tiny run on local CPU
-model: Qwen/Qwen3-TTS-12Hz-1.7B-Base
+# Smoke test configuration — tiny run on local CPU (VITS MMS-TTS-Arabic)
+model: facebook/mms-tts-ara
 device: cpu
-batch_size: 1
+batch_size: 2
 grad_accumulation: 1
 learning_rate: 1e-4
 epochs: 1
-max_phoneme_len: 510
+max_text_len: 100
 save_every: 1
 log_every: 1
 manifest: data/manifests/smoke_msa.jsonl
 clips_dir: data/processed/smoke
 output_dir: checkpoints/smoke
+min_confidence: 0.5

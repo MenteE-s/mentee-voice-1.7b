@@ -1,5 +1,5 @@
-# Full training configuration — for vast.ai GPU VM
-model: Qwen/Qwen3-TTS-12Hz-1.7B-Base
+# Full training configuration — for vast.ai GPU VM (VITS MMS-TTS-Arabic)
+model: facebook/mms-tts-ara
 device: cuda
 batch_size: 8
 grad_accumulation: 2
@@ -7,10 +7,11 @@ learning_rate: 1e-4
 warmup_steps: 50
 epochs: 30
 early_stopping_patience: 3
-max_phoneme_len: 510
+max_text_len: 200
 save_every: 500
 log_every: 10
 mixed_precision: bf16
 manifest: data/manifests/combined.jsonl
 clips_dir: data/processed
 output_dir: checkpoints/full
+min_confidence: 0.5

@@ -20,9 +20,9 @@ for _d in [RAW_DIR, PROCESSED_DIR, MANIFEST_DIR, CHECKPOINT_DIR, LOGS_DIR]:
     _d.mkdir(parents=True, exist_ok=True)
 
 # ---------------------------------------------------------------------------
-# Audio settings — 24 kHz mono (Qwen3-TTS codec requirement, non-negotiable)
+# Audio settings — 16 kHz mono (MMS-TTS-Arabic VITS requirement, non-negotiable)
 # ---------------------------------------------------------------------------
-SAMPLE_RATE = 24000
+SAMPLE_RATE = 16000
 TARGET_RMS = 0.2
 PEAK_CEILING = 0.98
 MIN_CLIP_SEC = 3.0
@@ -55,6 +55,9 @@ DIALECT_TAGS = {
     "syrian": "<ar-sy>",
     "sudanese": "<ar-sd>",
 }
+
+# Dialect -> speaker_id mapping for VITS multi-speaker conditioning
+DIALECT_TO_SPEAKER = {dialect: i for i, dialect in enumerate(sorted(DIALECT_TAGS.keys()))}
 
 # ---------------------------------------------------------------------------
 # All datasets from Excel
@@ -200,8 +203,7 @@ DIALECT_BALANCE = {
 # ---------------------------------------------------------------------------
 # Model & Organization
 # ---------------------------------------------------------------------------
-BASE_MODEL = "Qwen/Qwen3-TTS-12Hz-1.7B-Base"
-TOKENIZER_MODEL = "Qwen/Qwen3-TTS-Tokenizer-12Hz"
+BASE_MODEL = "facebook/mms-tts-ara"
 ORG_NAME = "MenteE"
 ORG_DOMAIN = "menteeai.org"
 MODEL_NAME_PREFIX = "mentee-arabic-tts"
