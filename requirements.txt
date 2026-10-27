@@ -1,0 +1,22 @@
+# Core audio / data
+numpy>=1.24.0
+soundfile>=0.12.0
+scipy>=1.11.0
+pyyaml>=6.0.0
+
+# Hugging Face dataset downloads
+huggingface_hub>=0.24.0
+hf-transfer>=0.1.0
+
+# Qwen3-TTS training & inference
+torch>=2.3.0
+torchaudio>=2.3.0
+transformers>=4.44.0
+accelerate>=0.31.0
+qwen-tts>=0.0.1
+
+# ASR verification (Whisper)
+faster-whisper>=1.0.0
+
+# Testing
+pytest>=8.0.0

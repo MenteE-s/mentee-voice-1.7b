@@ -1,0 +1,13 @@
+# Smoke test configuration — tiny run on local CPU
+model: Qwen/Qwen3-TTS-12Hz-1.7B-Base
+device: cpu
+batch_size: 1
+grad_accumulation: 1
+learning_rate: 1e-4
+epochs: 1
+max_phoneme_len: 510
+save_every: 1
+log_every: 1
+manifest: data/manifests/smoke_msa.jsonl
+clips_dir: data/processed/smoke
+output_dir: checkpoints/smoke

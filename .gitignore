@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+
+# Data (large, not committed)
+data/raw/
+data/processed/
+data/manifests/
+*.wav
+*.jsonl
+
+# Checkpoints & logs
+checkpoints/
+logs/
+*.nemo
+*.pth
+*.bin
+*.safetensors
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
